@@ -1,0 +1,37 @@
+<head>
+  <title>Welcome!! Come Aboard to help!</title>
+</head>
+
+<body>
+  {{> hello}}
+
+  {{>addAid}}
+</body>
+
+<template name="hello">
+  <h1>Welcome {{username}} to App!</h1>
+  <button>Click Me</button>
+  <p>{{name}} pressed the button {{counter1}} times.</p>
+</template>
+
+<template name="addAid">
+  <form>
+	<p>Aid Name :<input type="text" name="aidName"/></p>
+	<p>Aid category : <input type="text" name="aidCategory"/></p>
+	<p><input type="submit" value="Add Aid"/></p>
+  </form>
+  <p></p>
+  <h2>Aid List</h2>
+  <table border="1" width="50%">
+    <tr>
+      <th>Aid Name</th>
+      <th>Aid Category</th>
+    </tr>
+    {{#each listAid}}
+    <tr>
+      <td>{{name}}</td>
+      <td>{{category}}</td>
+    </tr>
+    {{/each}}
+  </table>
+</template>
